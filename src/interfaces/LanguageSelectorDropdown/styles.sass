@@ -1,0 +1,14 @@
+@import '../../styles/mixins'
+@import '../../styles/variables'
+
+.language-selector-dropdown
+  position: absolute
+  top: 20px
+  right: 20px
+  width: 200px
+  font-family: Montserrat, sans-serif
+  font-weight: var(--font-weight-bold)
+  font-size: var(--font-size-14)
+  z-index: 9999
+  +anim-opacity(0, .25s, 0, .25s)
+  +center-text()

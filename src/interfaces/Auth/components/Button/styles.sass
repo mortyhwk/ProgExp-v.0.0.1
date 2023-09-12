@@ -1,0 +1,48 @@
+@import '../../../../styles/mixins'
+
+.Auth .Button
+  position: relative
+  +flex-row-start-center()
+  width: 100%
+  min-height: 58 * $hPoint
+  font-size: $font-size-14
+  font-weight: $font-weight-medium
+  border-radius: $border-radius-point
+  transition: background-color 0.3s ease, color
+  +anim-from-top-left(.2s, .3s, 0, .3s)
+
+  &.centeredText
+    +flex-row-center-center()
+
+  &.type-0
+    background-color: $primary-color
+    color: #333
+    font-weight: 700
+    text-transform: uppercase
+
+  &.type-1
+    min-height: 38 * $hPoint
+    background: $background-gradient
+    background-size: 200%
+    color: var(--white-color)
+    //transition: background .25s ease
+
+  &-enter-done
+    transition: all .3s ease
+
+  &:not(.disabled)
+    cursor: pointer
+
+    &:hover
+      &.type-0
+        background-color: $dark-primary-color
+        //box-shadow: 0 0 30 * $hPoint rgba(255, 255, 255, 0.5)
+        //color: var(--white-color)
+
+      &.type-1
+        background-size: 100%
+        //transition: background .25s ease
+        //box-shadow: 0 0 30 * $hPoint rgba(52, 52, 52, 0.5)
+
+  &.disabled
+    opacity: 0.3

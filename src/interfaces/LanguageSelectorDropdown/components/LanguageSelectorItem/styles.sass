@@ -1,0 +1,22 @@
+@import '../../../../styles/mixins'
+@import '../../../../styles/variables'
+
+.language-item
+  display: flex
+  align-items: center
+  gap: 10px
+  padding-block: 6px
+  cursor: pointer
+  border-top: 3px solid var(--border-color)
+  transition: all .25s ease
+
+  &:hover
+    color: var(--white-color)
+    background: var(--background-color)
+    transition: all .25s ease
+
+  > .flag-image
+    margin-left: 15px
+    width: 25px
+    height: auto
+    transition: all .25s ease

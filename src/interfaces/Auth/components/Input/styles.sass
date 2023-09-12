@@ -1,0 +1,67 @@
+@import '../../../../styles/mixins'
+
+.Auth .input-wrapper
+  position: relative
+  display: flex
+  width: 100%
+
+.Auth .input-field
+  position: relative
+  width: 100%
+  height: var(--height)
+
+  > .input-field-placeholder
+    position: absolute
+    top: 50%
+    left: 20px
+    transform: translateY(-50%)
+    pointer-events: none
+    color: var(--gray-color)
+    transition: font-size .25s ease, transform .25s ease
+
+    &.active
+      transform: translateY(-110%)
+      font-size: var(--font-size-12)
+      transition: font-size .25s ease, transform .25s ease
+
+  > .input-field-background
+    +full-size-block()
+    position: relative
+    background-color: transparent
+    border: 1px solid var(--border-color)
+    border-radius: var(--border-radius-default)
+    transition: all .25s ease
+    z-index: 1
+
+  > .input-field-border
+    +full-size-block()
+    box-sizing: border-box
+    border: 3px solid transparent
+    border-radius: var(--border-radius-default)
+    transition: border-color .25s ease
+
+  > input
+    +full-size-block()
+    box-sizing: border-box
+    padding: 15px 20px 0 20px
+    font-size: var(--font-size-14)
+    font-weight: var(--font-weight-normal)
+    border-radius: var(--border-radius-default)
+    color: var(--black-color)
+    transition: all .25s ease
+    z-index: 2
+
+    &:focus ~ .input-field-placeholder,
+    &:not(:placeholder-shown) + .input-field-placeholder
+      transform: translateY(-110%)
+      font-size: var(--font-size-12)
+      transition: font-size .25s ease, transform .25s ease
+
+    &:hover ~ .input-field-background, &:focus ~ .input-field-background //, .eye
+      border: 1px solid var(--primary-color)
+      transition: border .25s ease
+
+    &:focus ~ .input-field-border
+      box-sizing: border-box
+      border: 3px solid var(--primary-color)
+      transition: border-color .25s ease

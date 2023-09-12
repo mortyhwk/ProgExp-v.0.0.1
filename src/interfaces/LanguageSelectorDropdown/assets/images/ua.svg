@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffe000;
+      }
+
+      .cls-2 {
+        fill: #011627;
+      }
+
+      .cls-3 {
+        fill: #0080ff;
+      }
+    </style>
+  </defs>
+  <g id="ua">
+    <g>
+      <rect class="cls-2" x="3.65" y="6" width="58.95" height="55.09"/>
+      <rect class="cls-3" x="4.35" y="6" width="57.07" height="25.5"/>
+      <rect class="cls-1" x="4.95" y="34.5" width="56.82" height="25.5"/>
+      <path class="cls-2" d="m57,0H9C4.04,0,0,4.04,0,9v48c0,4.96,4.04,9,9,9h48c4.96,0,9-4.04,9-9V9c0-4.96-4.04-9-9-9Zm3,57c0,1.65-1.35,3-3,3H9c-1.65,0-3-1.35-3-3V9c0-1.65,1.35-3,3-3h48c1.65,0,3,1.35,3,3v48Z"/>
+    </g>
+  </g>
+</svg>

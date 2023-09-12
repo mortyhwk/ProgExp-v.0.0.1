@@ -1,0 +1,44 @@
+@import '../../../../styles/mixins'
+@import '../../../../styles/variables'
+
+.Auth .Checkbox
+  +flex-row-start-center()
+  width: 100%
+  cursor: pointer
+  +anim-from-top-left(.2s, .3s, 0, .3s)
+
+  > .box
+    +flex-row-center-center()
+    width: calc(22 * $hPoint + .05vh)
+    height: calc(22 * $hPoint + .05vh)
+    margin-right: 10 * $hPoint
+    background-color: $gray-color
+    border-radius: 3 * $hPoint
+    transition: all .25s ease
+
+    > .tick
+      width: calc(12 * $hPoint + .05vh)
+      height: calc(12 * $hPoint + .05vh)
+      background-image: url(../../assets/images/tick.svg)
+      background-size: 100% 100%
+      background-position: center center
+      background-repeat: no-repeat
+      opacity: 0
+      transition: all .25s ease
+
+  > .text
+    color: $gray-color
+    font-size: $font-size-14
+    font-weight: $font-weight-medium
+    transition: all .25s ease
+
+  &.active
+
+    > .box
+      background-color: $light-filled-saved-color
+
+      > .tick
+        opacity: 1
+
+    > .text
+      color: var(--white-color)

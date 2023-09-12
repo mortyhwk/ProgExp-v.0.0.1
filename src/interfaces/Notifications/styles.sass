@@ -1,0 +1,45 @@
+@import '../../styles/mixins'
+@import '../../styles/variables'
+@import 'animate.css/animate.min.css'
+
+.NotificationsList
+  position: absolute
+  font-family: Montserrat, sans-serif
+  z-index: 9999
+
+  &.bottomRight
+    bottom: 60px
+    right: 60px
+    +flex-col-start-center()
+
+  &.bottom
+    bottom: 20px
+    right: 20px
+    //transform: translateX(-50%)
+    +flex-col-start-center()
+
+  > li
+    z-index: auto
+
+  .Notify
+    position: relative
+    display: flex
+    width: 420px
+    padding: 15px
+    margin-bottom: 8px
+    border-radius: 6px
+    align-items: center
+    background-color: var(--black-color-opacity-05)
+    font-size: var(--font-size-14)
+    font-weight: var(--font-weight-bold)
+    color: var(--white-color)
+
+    > .status
+      width: 20px
+      height: 20px
+      margin-right: 10px
+      align-self: center
+      background-size: 24px
+      background-position: 50%
+      background-repeat: no-repeat
+      animation-duration: 2s
