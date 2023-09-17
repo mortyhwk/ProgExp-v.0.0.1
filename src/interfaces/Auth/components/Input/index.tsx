@@ -1,10 +1,13 @@
 import React, {useRef, useState} from 'react'
 import './styles.sass'
+import {CSSTransition} from "react-transition-group";
 
 interface IInputProps {
+    isShowAnim: boolean
     style?: {
         [key: string]: string
     }
+    title?: string
     placeholder: string
     value: string
     setValue: (newValue: string) => void
@@ -20,8 +23,9 @@ interface IInputProps {
 }
 
 const Input: React.FC<IInputProps> = ({
+                                          isShowAnim,
                                           style = {},
-                                          label,
+                                          title,
                                           placeholder,
                                           value,
                                           setValue,
@@ -52,48 +56,52 @@ const Input: React.FC<IInputProps> = ({
     }
 
     return (
-        <div className="input-wrapper" style={style}>
-            {label && <div className="Label">{label}</div>}
-            <div className="input-field">
-                <input
-                    ref={inputRef}
-                    type={isHasEye ? 'password' : 'text'}
-                    value={value}
-                    spellCheck={false}
-                    onChange={handleChange}
-                    maxLength={40}
-                    onKeyDown={handleAction}
-                    autoFocus={autoFocus}
-                    autoCorrect="off"
-                    autoCapitalize="off"
-                />
-                <div className="input-field-background"/>
-                <div className="input-field-border"/>
-                {hasEye && (
-                    <div
-                        className={`eye ${isHasEye && 'hidden'}`}
-                        onClick={(event) => {
-                            event.preventDefault()
-                            setIsHasEye((prev) => !prev)
-                        }}
-                        onMouseDown={(event) => {
-                            event.preventDefault()
-                        }}
-                        onMouseUp={(event) => {
-                            event.preventDefault()
-                        }}
+        <CSSTransition in={isShowAnim} timeout={{enter: 600, exit: 300}} mountOnEnter unmountOnExit
+                       classNames='input-wrapper'>
+            <div className="input-wrapper" style={style}>
+                <div className="input-field">
+                    <input
+                        ref={inputRef}
+                        type={isHasEye ? 'password' : 'text'}
+                        value={value}
+                        spellCheck={false}
+                        placeholder=""
+                        onChange={handleChange}
+                        maxLength={40}
+                        onKeyDown={handleAction}
+                        autoFocus={autoFocus}
+                        autoCorrect="off"
+                        autoCapitalize="off"
+                        title={title}
                     />
+                    <div className="input-field-background"/>
+                    <div className="input-field-border"/>
+                    {hasEye && (
+                        <div
+                            className={`eye ${isHasEye && 'hidden'}`}
+                            onClick={(event) => {
+                                event.preventDefault()
+                                setIsHasEye((prev) => !prev)
+                            }}
+                            onMouseDown={(event) => {
+                                event.preventDefault()
+                            }}
+                            onMouseUp={(event) => {
+                                event.preventDefault()
+                            }}
+                        />
 
-                )}
-                {hasUser && <div className={`user ${activeUsername && 'activeUsername'}`}/>}
-                {hasPassword && (
-                    <div className={`password ${activePassword && 'activePassword'}`}/>
-                )}
-                {hasEmail && <div className={`email ${activePassword && 'activeEmail'}`}/>}
-                <span ref={placeholderRef}
-                      className={`input-field-placeholder ${value !== '' ? 'active' : ''}`}>{placeholder}</span>
+                    )}
+                    {hasUser && <div className={`user ${activeUsername && 'activeUsername'}`}/>}
+                    {hasPassword && (
+                        <div className={`password ${activePassword && 'activePassword'}`}/>
+                    )}
+                    {hasEmail && <div className={`email ${activePassword && 'activeEmail'}`}/>}
+                    <span ref={placeholderRef}
+                          className="input-field-placeholder">{placeholder}</span>
+                </div>
             </div>
-        </div>
+        </CSSTransition>
     )
 }
 

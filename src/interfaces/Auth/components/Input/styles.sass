@@ -3,12 +3,13 @@
 .Auth .input-wrapper
   position: relative
   display: flex
-  width: 100%
+  width: var(--width-default)
+  +anim-opacity(0, .25s, 0, .25s)
 
 .Auth .input-field
   position: relative
-  width: 100%
-  height: var(--height)
+  width: var(--width-default)
+  height: var(--height-default)
 
   > .input-field-placeholder
     position: absolute
@@ -17,12 +18,9 @@
     transform: translateY(-50%)
     pointer-events: none
     color: var(--gray-color)
+    font-size: var(--font-size-14)
+    font-weight: var(--font-weight-medium)
     transition: font-size .25s ease, transform .25s ease
-
-    &.active
-      transform: translateY(-110%)
-      font-size: var(--font-size-12)
-      transition: font-size .25s ease, transform .25s ease
 
   > .input-field-background
     +full-size-block()
@@ -47,12 +45,12 @@
     font-size: var(--font-size-14)
     font-weight: var(--font-weight-normal)
     border-radius: var(--border-radius-default)
-    color: var(--black-color)
+    color: var(--text-color)
     transition: all .25s ease
     z-index: 2
 
     &:focus ~ .input-field-placeholder,
-    &:not(:placeholder-shown) + .input-field-placeholder
+    &:not(:placeholder-shown) ~ .input-field-placeholder
       transform: translateY(-110%)
       font-size: var(--font-size-12)
       transition: font-size .25s ease, transform .25s ease
