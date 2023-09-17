@@ -6,6 +6,7 @@ import { PageIds } from './types'
 import { sendNotify } from '../../utils/notify'
 import { NotificationPositions, NotificationTypes } from '../../shared/notifications/types'
 import { authActions } from './reducer'
+import SvgDefs from './components/SvgDefs'
 
 const Auth: React.FC = () => {
     const { isOpen } = useAppSelector((state) => state.auth)
@@ -29,6 +30,7 @@ const Auth: React.FC = () => {
     return (
         <div className="Auth">
             <SignInPage sendNotify={sendAnyNotify} />
+            <SvgDefs />
         </div>
     )
 }
