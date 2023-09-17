@@ -12,6 +12,11 @@ export const TRANSLATIONS: Translations = {
         [Language.EN]: 'Enter your username',
         [Language.UA]: 'Введіть свій логін'
     },
+    LOGIN_HELP_TEXT: {
+        [Language.RU]: 'Заполните это поле',
+        [Language.EN]: 'Fill in this field',
+        [Language.UA]: 'Заповніть це поле'
+    },
     PASSWORD_INPUT_TEXT: {
         [Language.RU]: 'Введите свой пароль',
         [Language.EN]: 'Enter your password',
@@ -23,9 +28,9 @@ export const TRANSLATIONS: Translations = {
         [Language.UA]: 'Авторизація'
     },
     GREETING_FOR_AUTH_PART_1_TEXT: {
-        [Language.RU]: 'Добро пожаловать!',
-        [Language.EN]: 'Welcome!',
-        [Language.UA]: 'Ласкаво просимо!'
+        [Language.RU]: 'Вход в ProgExp',
+        [Language.EN]: 'Login to ProgExp',
+        [Language.UA]: 'Вхід у ProgExp'
     },
     GREETING_FOR_AUTH_PART_2_TEXT: {
         [Language.RU]: 'Войдите в свой аккаунт или зарегистрируйте новый',
@@ -51,5 +56,10 @@ export const TRANSLATIONS: Translations = {
         [Language.RU]: 'Забыли пароль?',
         [Language.EN]: 'Forgot your password?',
         [Language.UA]: 'Забули пароль?'
+    },
+    CREATE_ACCOUNT_TEXT: {
+        [Language.RU]: 'Создать аккаунт',
+        [Language.EN]: 'Create account',
+        [Language.UA]: 'Створити акаунт'
     }
 };
