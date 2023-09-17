@@ -1,4 +1,4 @@
-export enum PageIds {
+export const enum PageIds {
     Disclaimer,
     SignIn,
     SignUp,
@@ -7,11 +7,14 @@ export enum PageIds {
     Rules
 }
 
-export enum ButtonType {
-    White,
-    Dark
+export const enum ButtonType {
+    Default,
+    Transparent,
+    TransparentCheckbox,
+    Arrow
 }
-export enum Rules {
+
+export const enum Rules {
     NoRead,
     Read
 }
