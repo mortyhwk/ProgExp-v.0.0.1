@@ -2,7 +2,6 @@ import React, { HTMLInputTypeAttribute, useRef, useState } from 'react'
 import './styles.sass'
 import { CSSTransition } from 'react-transition-group'
 import { AnimatePresence, motion } from 'framer-motion'
-import { calcVh } from '../../../../utils/calcVh'
 
 interface IInputProps {
     isShowAnim: boolean
@@ -30,7 +29,7 @@ const Error: React.FC<IInputProps> = ({ isShowAnim, style = {}, value }) => {
                                 height: 0,
                                 marginBottom: 0
                             }}
-                            animate={{ opacity: 1, height: 'auto', marginBottom: calcVh(8) }}
+                            animate={{ opacity: 1, height: 'auto', marginBottom: '8px' }}
                             exit={{
                                 opacity: 0,
                                 height: 0,
