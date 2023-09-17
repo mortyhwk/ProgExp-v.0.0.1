@@ -1,7 +1,7 @@
 =anim-from-top-left($enterDelay, $enterDuration, $exitDelay, $exitDuration)
   &-enter
     opacity: 0
-    transform: translate(-100 * $hPoint, -100 * $hPoint)
+    transform: translate(-100px, -100px)
 
   &-enter-active
     opacity: 1
@@ -15,6 +15,6 @@
 
   &-exit-active
     opacity: 0
-    transform: translate(-100 * $hPoint, -100 * $hPoint)
+    transform: translate(-100px, -100px)
     transition: all $exitDuration ease
     transition-delay: $exitDelay
