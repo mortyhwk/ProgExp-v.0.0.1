@@ -1,4 +1,8 @@
+@import '../../../../styles/mixins'
+
 .Auth .Title
-  font-weight: var(--font-weight-medium)
-  font-size: var(--font-size-18)
-  color: var(--black-color)
+  font-weight: var(--font-weight-bold)
+  font-size: var(--font-size-24)
+  color: var(--text-color)
+  transition: color .25s ease
+  +anim-opacity(0, .25s, 0, .25s)
