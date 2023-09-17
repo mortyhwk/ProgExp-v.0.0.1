@@ -1,4 +1,4 @@
-import { NotificationPositions, NotificationTypes } from '../../../../shared/notifications/types'
+import { NotificationPositions, NotificationTypes } from '../../shared/notifications/types'
 
 export type Notification = {
     position: NotificationPositions
