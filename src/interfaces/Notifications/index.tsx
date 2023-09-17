@@ -1,5 +1,5 @@
-import './styles.sass'
 import React, {useEffect, useRef} from 'react'
+import './styles.sass'
 import {useAppSelector} from '../../hooks/redux'
 import {Notification} from './types'
 import {useDispatch} from 'react-redux'
@@ -7,10 +7,6 @@ import {notificationsActions, notificationsReducer, notificationsSlice} from './
 import {NotificationPositions} from '../../shared/notifications/types'
 import {motion, AnimatePresence, easeIn} from 'framer-motion'
 import 'animate.css'
-// @ts-ignore
-import iconError from '../Auth/assets/images/error.svg'
-// @ts-ignore
-import iconSuccess from '../Auth/assets/images/success.svg'
 
 const Notifications: React.FC = () => {
     const dispatch = useDispatch()
@@ -85,19 +81,19 @@ const Notifications: React.FC = () => {
                             style={{listStyleType: 'none'}}
                         >
                             <div className="Notify">
-                                {type === 1 ? (
-                                    <img
-                                        src={iconError}
-                                        className="status animate__animated animate__heartBeat"
-                                        alt="Ошибка"
-                                    />
-                                ) : (
-                                    <img
-                                        src={iconSuccess}
-                                        className="status animate__animated animate__heartBeat"
-                                        alt="Успешно"
-                                    />
-                                )}
+                                {/*{type === 1 ? (*/}
+                                {/*    <img*/}
+                                {/*        src={iconError}*/}
+                                {/*        className="status animate__animated animate__heartBeat"*/}
+                                {/*        alt="Ошибка"*/}
+                                {/*    />*/}
+                                {/*) : (*/}
+                                {/*    <img*/}
+                                {/*        src={iconSuccess}*/}
+                                {/*        className="status animate__animated animate__heartBeat"*/}
+                                {/*        alt="Успешно"*/}
+                                {/*    />*/}
+                                {/*)}*/}
                                 {text}
                             </div>
                         </motion.li>

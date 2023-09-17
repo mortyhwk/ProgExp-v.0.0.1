@@ -1,11 +1,11 @@
-export enum NotificationTypes {
+export const enum NotificationTypes {
     Info,
     Error,
     Warning,
     Success
 }
 
-export enum NotificationPositions {
+export const enum NotificationPositions {
     Bottom,
     bottomRight
 }
