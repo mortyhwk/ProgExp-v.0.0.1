@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-export enum Language {
+export const enum Language {
     RU,
     EN,
     UA,
