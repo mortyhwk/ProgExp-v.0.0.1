@@ -1,31 +1,45 @@
 @import '../../../../styles/mixins'
 
-.Auth .Button
+.Auth .btn
   position: relative
-  +flex-row-start-center()
-  width: 100%
-  min-height: 58 * $hPoint
-  font-size: $font-size-14
-  font-weight: $font-weight-medium
-  border-radius: $border-radius-point
+  width: var(--width-default)
+  height: var(--height-default)
+  font-size: var(--font-size-14)
+  font-weight: var(--font-weight-medium)
+  border-radius: var(--border-radius-default)
   transition: background-color 0.3s ease, color
+  +flex-row-center-center()
   +anim-from-top-left(.2s, .3s, 0, .3s)
 
-  &.centeredText
-    +flex-row-center-center()
-
   &.type-0
-    background-color: $primary-color
-    color: #333
-    font-weight: 700
-    text-transform: uppercase
+    background-color: var(--primary-color)
+    color: var(--white-color)
 
   &.type-1
-    min-height: 38 * $hPoint
-    background: $background-gradient
-    background-size: 200%
+    background: transparent
+    color: var(--text-color)
+    transition: color .25s ease, background .25s ease
+
+  &.type-2
+    padding-inline: 20px
+    background: transparent
+    color: var(--text-color)
+    transition: color .25s ease, background .25s ease
+
+  &.type-3
+    background-color: var(--primary-color)
     color: var(--white-color)
-    //transition: background .25s ease
+    width: 60px
+    aspect-ratio: 1
+
+  .arrow-right
+    display: flex
+    fill: none
+    stroke: var(--arrow-color)
+    stroke-linecap: round
+    stroke-linejoin: round
+    stroke-width: 8px
+    transition: stroke .25s ease
 
   &-enter-done
     transition: all .3s ease
@@ -35,14 +49,25 @@
 
     &:hover
       &.type-0
-        background-color: $dark-primary-color
-        //box-shadow: 0 0 30 * $hPoint rgba(255, 255, 255, 0.5)
-        //color: var(--white-color)
+        background-color: var(--dark-primary-color)
+        transition: background .25s ease
+      //box-shadow: 0 0 30 * $hPoint rgba(255, 255, 255, 0.5)
+      //color: var(--white-color)
 
       &.type-1
-        background-size: 100%
-        //transition: background .25s ease
+        background: var(--hover-color)
+        transition: background .25s ease
+      //box-shadow: 0 0 30 * $hPoint rgba(255, 255, 255, 0.5)
+      //color: var(--white-color)
+
+      &.type-2
+        background: var(--hover-color)
+        transition: background .25s ease
         //box-shadow: 0 0 30 * $hPoint rgba(52, 52, 52, 0.5)
 
+      &.type-3
+        background-color: var(--dark-primary-color)
+        transition: background .25s ease
+
   &.disabled
-    opacity: 0.3
+    opacity: .3
