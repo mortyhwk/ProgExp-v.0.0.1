@@ -1,31 +1,10 @@
 @import '../../../../styles/mixins'
 
-.Auth .Logotypes
-  //border: 2px solid salmon
+.Auth .sign-logo
   display: flex
-  align-content: center
   align-items: center
-  align-self: flex-start
   justify-content: center
-  width: 370 * $hPoint
-  height: 100 * $hPoint
-  +anim-from-top-left(.2s, .3s, 0, .3s)
-
-  .Logotype,
-  .BigLogotype
-    background-image: url(../../assets/images/logotype-prototype-3.svg)
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: contain
-    //border: 2px solid salmon
-    width: 100%
-    height: 100%
-
-  //.Logotype
-    width: 100%
-    height: 100%
-
-  .BigLogotype
-    background-image: url(../../assets/images/logotype-prototype-1.svg)
-    width: 50%
-    //transform: translateY(-5%)
+  user-select: none
+  width: var(--width-default)
+  height: 100px
+  +anim-opacity(0, .25s, 0, .25s)
