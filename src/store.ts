@@ -2,11 +2,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { authReducer } from './interfaces/Auth/reducer'
 import { notificationsReducer } from './interfaces/Notifications/reducer'
 import { languageReducer } from './interfaces/LanguageSelectorDropdown/reducer'
+import { themeModeReducer } from './interfaces/Theme/reducer'
 
 const rootReducer = combineReducers({
     auth: authReducer,
     notifications: notificationsReducer,
-    language: languageReducer
+    language: languageReducer,
+    themeMode: themeModeReducer,
 })
 
 export const setupStore = () => {
