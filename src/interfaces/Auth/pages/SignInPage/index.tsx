@@ -12,7 +12,7 @@ import {authActions} from '../../reducer'
 import {AuthValidationRegExps} from '../../../../shared/auth/validationRegExps'
 // import {handleAuthUsernameChange, handleAuthPasswordChange} from '../../../../utils/signInHelpers'
 import {useTranslation} from '../../../../hooks/useTranslation'
-import { NotificationPositions, NotificationTypes } from '../../../../shared/notifications/types'
+import {NotificationPositions, NotificationTypes} from '../../../../shared/notifications/types'
 
 type SignInPageProps = {
     sendNotify: (type: NotificationTypes, text: string, duration?: number) => void
@@ -23,7 +23,7 @@ const SignInPage: React.FC<SignInPageProps> = ({sendNotify}) => {
     const dispatch = useAppDispatch()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [isChecked, setIsChecked] = useState(true)
+    const [isRemember, setIsRemember] = useState(true)
     const [activeUsername, setActiveUsername] = useState(false)
     const [activePassword, setActivePassword] = useState(false)
     const {isOpen, page} = useAppSelector((state) => state.auth)
@@ -106,14 +106,57 @@ const SignInPage: React.FC<SignInPageProps> = ({sendNotify}) => {
         >
             <div className="SignInPage" ref={nodeRef}>
                 <div className="content">
+                    <Logo
+                        isShowAnim={isShowContent}
+                        style={{marginBottom: '35px'}}
+                    />
                     <Title
+                        isShowAnim={isShowContent}
                         text={translate('GREETING_FOR_AUTH_PART_1_TEXT')}
                         style={{marginBottom: '35px'}}
                     />
-                    <Input
-                           placeholder={translate('LOGIN_INPUT_TEXT')}
-                           value={username}
-                           setValue={setUsername}
+                    <div className="row checkbox-wrapper"
+                         style={{marginBottom: '8px'}}>
+                        <Input
+                            isShowAnim={isShowContent}
+                            title={translate('LOGIN_HELP_TEXT')}
+                            placeholder={translate('LOGIN_INPUT_TEXT')}
+                            value={username}
+                            setValue={setUsername}
+                            style={{marginRight: '5px'}}
+                        />
+                        <Button
+                            isShowAnim={isShowContent}
+                            arrowState='right'
+                            type={ButtonType.Arrow}
+                        />
+                    </div>
+                    {/*<Checkbox*/}
+                    {/*    isShowAnim={isShowContent}*/}
+                    {/*    text="Оставаться в системе"*/}
+                    {/*    checked={isRemember}*/}
+                    {/*    setChecked={setIsRemember}*/}
+                    {/*/>*/}
+                    <Button
+                        isShowAnim={isShowContent}
+                        text={translate('REMEMBER_ME_TEXT')}
+                        type={ButtonType.TransparentCheckbox}
+                        checked={isRemember}
+                        setChecked={setIsRemember}
+                        style={{marginBottom: '40px'}}
+                    />
+                    <Button
+                        isShowAnim={isShowContent}
+                        text={translate('FORGOT_PASSWORD_TEXT')}
+                        type={ButtonType.Transparent}
+                        onClick={handleClickRecover}
+                        style={{marginBottom: '5px'}}
+                    />
+                    <Button
+                        isShowAnim={isShowContent}
+                        text={translate('CREATE_ACCOUNT_TEXT')}
+                        type={ButtonType.Transparent}
+                        onClick={handleClickRecover}
                     />
                 </div>
             </div>
